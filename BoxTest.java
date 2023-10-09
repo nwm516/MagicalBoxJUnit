@@ -17,17 +17,17 @@ class BoxTest {
     @org.junit.jupiter.api.Test
     void volume() {
 
-        // Good box volume tests
+        // Good box volume tests establishing correctly created Box objects
         assertEquals(36, (firstBox.volume()), 0);
         assertEquals(20, (secondBox.volume()), 0);
         assertEquals(125, (thirdBox.volume()), 0);
 
-        // Bad box volume tests
+        // Bad box volume tests, preventing Boxes with wrong dimensions
         assertThrows(IllegalArgumentException.class, () -> badBoxOne.volume());
         assertThrows(IllegalArgumentException.class, () -> badBoxTwo.volume());
         assertThrows(IllegalArgumentException.class, () -> badBoxThree.volume());
 
-        // Unexpected values
+        // Unexpected values, asserting values off from what is expected
         assertNotEquals(35, (firstBox.volume()), 0);
         assertNotEquals(0, (secondBox.volume()), 0);
         assertNotEquals(100, (thirdBox.volume()), 0);
@@ -36,20 +36,20 @@ class BoxTest {
     @org.junit.jupiter.api.Test
     void addItem() {
 
-        // First item added
+        // First item added, checking on successful method execution
         String firstItem = "Magic Broom";
         firstBox.addItem(firstItem);
         assertEquals(firstBox.printItems(), "[Magic Broom]");
 
-        // Second item added
+        // Second item added, checking on successful method execution
         String secondItem = "Double Jump Sneakers";
         firstBox.addItem(secondItem);
         assertEquals(firstBox.printItems(), "[Magic Broom, Double Jump Sneakers]");
 
-        // Null value addition attempt
+        // Null value addition attempt, preventing items with no value/text information
         assertThrows(IllegalArgumentException.class, () -> firstBox.addItem(null));
 
-        // Testing Boundaries of box
+        // Testing Boundaries of box, preventing additional items past the 10th being added
         firstBox.addItem("Three");
         firstBox.addItem("Four");
         firstBox.addItem("Five");
@@ -76,15 +76,18 @@ class BoxTest {
         firstBox.addItem(secondItem);
         firstBox.addItem(thirdItem);
 
-        // First removal & test
+        /* First removal and test,
+           checking successful removal and appropriate outcome of items still remaining */
         firstBox.removeItem(secondItem);
         assertEquals(firstBox.printItems(), "[Ice Nunchucks, Lightning Sword]");
 
-        // A removal attempt at something that was never added
+        /* A removal attempt at something that was never added,
+           assuring Box object's contents are what we expect */
         firstBox.removeItem(fourthItem);
         assertEquals(firstBox.printItems(), "[Ice Nunchucks, Lightning Sword]");
 
-        // Null value removal attempt
+        /* Null value removal attempt,
+           again preventing passage of items with no value/text information */
         assertThrows(IllegalArgumentException.class, () -> firstBox.removeItem(null));
     }
 }

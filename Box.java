@@ -8,8 +8,6 @@ import java.util.ArrayList;
  * @author Nicholas Miller
  * @version 10/08/2023
  *
- *
- *
  */
 public class Box {
 
