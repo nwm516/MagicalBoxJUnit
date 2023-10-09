@@ -2,6 +2,15 @@ package org.example;
 
 import static org.junit.Assert.*;
 
+/**
+ * BoxTest class is used to test Box's methods,
+ * ensuring that all methods are responding appropriately
+ *
+ * @author Nicholas Miller
+ * @version 10/08/2023
+ *
+ */
+
 class BoxTest {
 
     // Good Boxes

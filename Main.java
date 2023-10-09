@@ -1,5 +1,13 @@
 package org.example;
 
+/**
+ * Main method to allow Box class program to run
+ *
+ * @author Nicholas Miller
+ * @version 10/08/2023
+ *
+ */
+
 public class Main {
     public static void main(String[] args) {
         Box magicBox = new Box(3, 3, 5);
