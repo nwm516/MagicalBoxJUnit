@@ -12,16 +12,16 @@ import java.util.ArrayList;
 public class Box {
 
     /** Defines width for Box object in constructor */
-    private double width;
+    final private double width;
 
     /** Defines height for Box object in constructor */
-    private double height;
+    final private double height;
 
     /** Defines depth for Box object in constructor */
-    private double depth;
+    final private double depth;
 
     /** ArrayList used for storage of items in Box object */
-    private ArrayList<String> inside = new ArrayList<>();
+    final private ArrayList<String> inside = new ArrayList<>();
 
     /**
      * Boolean value to determine if ArrayList is at capacity
@@ -123,6 +123,7 @@ public class Box {
      */
     public String printItems() {
         String output = inside.toString();
+        System.out.println(output);
         return output;
     }
 }
